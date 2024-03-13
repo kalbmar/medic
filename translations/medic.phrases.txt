@@ -1,0 +1,38 @@
+"Phrases"
+{
+    "Prefix"
+    {
+        "en"    "{BurlyWood}[Medic]{default} "
+    }
+
+    "Dead player"
+    {
+        "en"    "You are dead and cannot use medic"
+    }
+
+    "Full health"
+    {
+        "en"    "You do not need a medic, you are practically healthy"
+    }
+
+    "Already used medic"
+    {
+        "en"    "You have already used a medic"
+    }
+
+    "Medic sound notice"
+    {
+        "en"    "Low health sound notification"
+    }
+
+    "Turn on notice"
+    {
+	"en"    "Turn on notice"
+    }
+
+    "Turn off notice"
+    {
+        "en"    "Turn off notice"
+    }
+
+}

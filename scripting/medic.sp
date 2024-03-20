@@ -7,9 +7,9 @@
 #include "constant"
 
 #include "modules/variables.sp"
-#include "modules/con-var.sp"
+#include "modules/console-variable.sp"
 #include "modules/cookie.sp"
-#include "modules/command.sp"
+#include "modules/console-command.sp"
 #include "modules/event.sp"
 #include "modules/menu.sp"
 #include "modules/sound.sp"

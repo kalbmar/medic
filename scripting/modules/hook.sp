@@ -5,15 +5,14 @@ void Hook_Create(int client) {
 public void Hook_OnTakeDamageAlivePost(int victim, int attacker, int inflictor, float damage, int damagetype) {
     int currentHealth = GetClientHealth(victim);
 
-    if (g_isPlayerLowHealth[victim] || !g_cookieSoundNotice[victim]) {
+    if (Client_IsLowHealth(victim) || !Cookie_IsSoundNotice(victim)) {
         return;
     }
 
-    bool notyficationLowHealth = PLAYER_DEAD < currentHealth <= g_medicHealthMin.IntValue;
+    bool notyficationLowHealth = PLAYER_DEAD < currentHealth <= ConVar_GetHealthMin();
 	
     if (notyficationLowHealth) {
-        g_isPlayerLowHealth[victim] = true;
-		
+        Client_LowHealth(victim);
         Sound_PlayLowHealth(victim);
     }
 }

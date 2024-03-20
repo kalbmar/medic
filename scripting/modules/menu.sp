@@ -19,7 +19,7 @@ public void Menu_Create(int client) {
 }
 
 void Menu_AddItem(Menu menu, const char[] phrase, int client) {
-    char item[ITEM_MAX_SIZE];
+    char item[ITEM_MAX_LENGTH];
 
     Format(item, sizeof(item), "%T", phrase, client);
 
@@ -28,7 +28,7 @@ void Menu_AddItem(Menu menu, const char[] phrase, int client) {
 
 public int MenuSettings(Menu menu, MenuAction action, int param1, int param2) {
     if (action == MenuAction_Select) {
-        char info[ITEM_MAX_SIZE];
+        char info[ITEM_MAX_LENGTH];
 
         menu.GetItem(param2, info, sizeof(info));
 

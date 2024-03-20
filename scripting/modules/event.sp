@@ -7,13 +7,12 @@ public void Event_PlayerSpawn(Event event, const char[] name, bool dontBroadcast
     int userId = event.GetInt("userid");
     int client = GetClientOfUserId(userId);
 
-    g_isPlayerHealed[client] = false;
-    g_isPlayerLowHealth[client] = false;
+    Client_ResetHealthUses(client);
 }
 
 public void Event_PlayerChangeClass(Event event, const char[] name, bool dontBroadcast) {
     int userId = event.GetInt("userid");
     int client = GetClientOfUserId(userId);
 	
-    delete g_timerHealth[client];
+    Timer_Delete(client);
 }

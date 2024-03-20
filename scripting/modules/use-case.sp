@@ -1,6 +1,6 @@
 void UseCase_HealPlayer(int client) {
     int currentHealth = GetClientHealth(client);
-    int randomHealth = GetRandomInt(g_medicHealthRandomMin.IntValue, g_medicHealthRandomMax.IntValue);
+    int randomHealth = GetRandomInt(ConVar_GetHealthRandomMin(), ConVar_GetHealthRandomMax());
     int newPlayerHealth = currentHealth + randomHealth; 
 
     if (newPlayerHealth > MAX_HEALTH) {

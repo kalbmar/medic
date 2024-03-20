@@ -17,7 +17,7 @@ public Action Command_Medic(int client, int agrs) {
 
 void Command_CallMedic(int client, bool playMedicSound) {
     int currentHealth = GetClientHealth(client);
-    bool allowToUseMedic = currentHealth <= g_medicHealthMin.IntValue;
+    bool allowToUseMedic = currentHealth <= ConVar_GetHealthMin();
 
     if (!IsPlayerAlive(client)) {
         CReplyToCommand(client, "%t%t", "Prefix", "Dead player");
@@ -31,7 +31,7 @@ void Command_CallMedic(int client, bool playMedicSound) {
         return;
     }
 
-    if (g_isPlayerHealed[client]) {
+    if (Client_IsHeled(client)) {
         CReplyToCommand(client, "%t%t", "Prefix", "Already used medic");
 
         return;

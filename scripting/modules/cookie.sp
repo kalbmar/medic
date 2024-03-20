@@ -1,3 +1,6 @@
+static Handle g_cookieNotificationLowHealth = null;
+static bool g_cookieSoundNotice[MAXPLAYERS + 1] = {COOKIE_DEFAULT_VALUE, ...};
+
 void Cookie_Create() {
     g_cookieNotificationLowHealth = RegClientCookie("play_sound_low_health", "Play sound by low health", CookieAccess_Private);
 
@@ -26,4 +29,8 @@ void Cookie_SetNotice(int client, bool enabled) {
     g_cookieSoundNotice[client] = enabled;
 
     SetClientCookie(client, g_cookieNotificationLowHealth, enabled ? SOUND_NOTICE_YES : SOUND_NOTICE_NO);
+}
+
+bool Cookie_IsSoundNotice(int client) {
+    return g_cookieSoundNotice[client];
 }

@@ -9,10 +9,10 @@ public void Hook_OnTakeDamageAlivePost(int victim, int attacker, int inflictor, 
         return;
     }
 
-    bool notyficationLowHealth = PLAYER_DEAD < currentHealth <= ConVar_GetHealthMin();
+    bool notificationLowHealth = PLAYER_DEAD < currentHealth <= ConVar_GetHealthMin();
 	
-    if (notyficationLowHealth) {
-        Client_LowHealth(victim);
+    if (notificationLowHealth) {
+        Client_SetLowHealth(victim);
         Sound_PlayLowHealth(victim);
     }
 }

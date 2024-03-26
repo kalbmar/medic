@@ -14,5 +14,5 @@ public void Event_PlayerChangeClass(Event event, const char[] name, bool dontBro
     int userId = event.GetInt("userid");
     int client = GetClientOfUserId(userId);
 	
-    Timer_Delete(client);
+    Timer_RefillHealthDelete(client);
 }

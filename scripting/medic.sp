@@ -2,15 +2,16 @@
 #include <sdktools>
 #include <sdkhooks>
 #include <clientprefs>
-#include <morecolors>
 
-#include "use-case"
-#include "cookie"
-#include "timer"
-#include "console-command"
-#include "hook"
-#include "menu"
-#include "sound"
+#include "morecolors"
+
+#include "medic/use-case"
+#include "medic/cookie"
+#include "medic/timer"
+#include "medic/console-command"
+#include "medic/hook"
+#include "medic/menu"
+#include "medic/sound"
 
 #include "modules/client.sp"
 #include "modules/console-variable.sp"
@@ -29,7 +30,7 @@ public Plugin myinfo = {
     name = "Medic",
     author = "Kalbmar",
     description = "Allows you to use medic",
-    version = "1.0.0",
+    version = "1.0.1",
     url = "https://github.com/kalbmar/medic",
 };
 
@@ -52,5 +53,5 @@ public void OnClientPutInServer(int client) {
 }
 
 public void OnClientConnected(int client) {
-    Timer_Reset(client);
+    Timer_RefillHealthReset(client);
 }

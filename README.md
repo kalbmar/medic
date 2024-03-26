@@ -1,6 +1,6 @@
 # Medic
 
-- Allows you to use medic
+Allows you to use medic
 
 ### Supported games
 

@@ -36,6 +36,8 @@ void UseCase_HealPlayer(int client) {
         newPlayerHealth = MAX_HEALTH;
     }
 
+    Client_PlayerHealed(client);
+
     Sound_PlayHealth(client);
     SetEntityHealth(client, newPlayerHealth);
 }

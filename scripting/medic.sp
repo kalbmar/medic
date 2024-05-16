@@ -30,7 +30,7 @@ public Plugin myinfo = {
     name = "Medic",
     author = "Kalbmar",
     description = "Allows you to use medic",
-    version = "1.0.1",
+    version = "1.0.2",
     url = "https://github.com/kalbmar/medic",
 };
 

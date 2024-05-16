@@ -5,6 +5,10 @@ bool Client_IsHealed(int client) {
     return g_isPlayerHealed[client];
 }
 
+void Client_PlayerHealed(int client) {
+    g_isPlayerHealed[client] = true;
+}
+
 bool Client_IsLowHealth(int client) {
     return g_isPlayerLowHealth[client];
 }

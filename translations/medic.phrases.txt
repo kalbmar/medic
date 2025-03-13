@@ -2,7 +2,7 @@
 {
     "Prefix"
     {
-        "en"    "{BurlyWood}[Medic]{default} "
+        "en"    "DEB887[Medic] "
     }
 
     "Dead player"

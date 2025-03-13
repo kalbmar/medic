@@ -1,21 +1,25 @@
 void UseCase_CallMedic(int client, bool playMedicSound) {
+    if (Forward_Medic_OnUse(client) == Plugin_Stop) {
+        return;
+    }
+
     int currentHealth = GetClientHealth(client);
     bool allowToUseMedic = currentHealth <= ConVar_GetHealthMin();
 
     if (!IsPlayerAlive(client)) {
-        CReplyToCommand(client, "%t%t", "Prefix", "Dead player");
+        ReplyToCommand(client, "%t%t", "Prefix", "Dead player");
 
         return;
     }
 
     if (!allowToUseMedic) {
-        CReplyToCommand(client, "%t%t", "Prefix", "Full health");
+        ReplyToCommand(client, "%t%t", "Prefix", "Full health");
 
         return;
     }
 
     if (Client_IsHealed(client)) {
-        CReplyToCommand(client, "%t%t", "Prefix", "Already used medic");
+        ReplyToCommand(client, "%t%t", "Prefix", "Already used medic");
 
         return;
     }

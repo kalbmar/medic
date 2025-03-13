@@ -3,8 +3,6 @@
 #include <sdkhooks>
 #include <clientprefs>
 
-#include "morecolors"
-
 #include "medic/use-case"
 #include "medic/cookie"
 #include "medic/timer"
@@ -12,6 +10,7 @@
 #include "medic/hook"
 #include "medic/menu"
 #include "medic/sound"
+#include "medic/forward"
 
 #include "modules/client.sp"
 #include "modules/console-variable.sp"
@@ -23,6 +22,7 @@
 #include "modules/timer.sp"
 #include "modules/hook.sp"
 #include "modules/use-case.sp"
+#include "modules/forward.sp"
 
 #define CONFIG_CREATE_YES true
 
@@ -30,11 +30,12 @@ public Plugin myinfo = {
     name = "Medic",
     author = "Kalbmar",
     description = "Allows you to use medic",
-    version = "1.0.2",
+    version = "1.0.3",
     url = "https://github.com/kalbmar/medic",
 };
 
 public void OnPluginStart() {
+    Forward_Create();
     ConVar_Create();
     Cookie_Create();
     Command_Create();

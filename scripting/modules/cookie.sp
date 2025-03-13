@@ -20,6 +20,7 @@ public void OnClientCookiesCached(int client) {
 
     if (cookieValue[0] == NULL_TERMINATOR) {
         g_cookieSoundNotice[client] = COOKIE_DEFAULT_VALUE;
+        
     } else {
         g_cookieSoundNotice[client] = view_as<bool>(StringToInt(cookieValue));
     }

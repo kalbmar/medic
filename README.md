@@ -17,3 +17,10 @@ Allows you to use medic
 - sm_medic_health_delay - Delay before treatment [default: "1.5"]
 - sm_medic_health_random_min - Minimum random health to add [default: "30"]
 - sm_medic_health_random_max - Maximum random health to add [default: "50"]
+
+### API
+
+`Return 'Plugin_Stop' to prohibit medic used`
+```sourcepawn
+forward Action Medic_OnUse(int client);
+```
